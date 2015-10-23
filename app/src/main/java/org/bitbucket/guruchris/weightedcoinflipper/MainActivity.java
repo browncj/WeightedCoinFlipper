@@ -26,20 +26,36 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                GlobalState state = ((GlobalState) getApplicationContext());
                 ImageView coinImg = (ImageView) findViewById(R.id.coin);
                 TextView streakCounter = (TextView) findViewById(R.id.streakCounter);
 
                 Random random = new Random();
                 double randValue = random.nextDouble();
 
-                double percentHeads; //Determines weighting, will be relocated later on
-                percentHeads = .5; //Currently hardcoded
-
-                if(randValue <= percentHeads) {
-                    coinImg.setImageResource(R.drawable.obverse);
+                if(randValue <= state.getWeighting()) {
+                    if(state.isHeads()){
+                        state.setStreak(state.getStreak() + 1);
+                        streakCounter.setText("Heads x" + state.getStreak() + "!!");
+                    }
+                    else{
+                        state.setIsHeads(true);
+                        coinImg.setImageResource(R.drawable.obverse);
+                        state.setStreak(1);
+                        streakCounter.setText("Heads x" + state.getStreak() + "!!");
+                    }
                 }
                 else {
-                    coinImg.setImageResource(R.drawable.reverse);
+                    if(state.isHeads()){
+                        state.setIsHeads(false);
+                        coinImg.setImageResource(R.drawable.reverse);
+                        state.setStreak(1);
+                        streakCounter.setText("Tails x" + state.getStreak() + "!!");
+                    }
+                    else{
+                        state.setStreak(state.getStreak() + 1);
+                        streakCounter.setText("Tails x" + state.getStreak() + "!!");
+                    }
                 }
             }
         });
