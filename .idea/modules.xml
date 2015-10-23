@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WeightedCoinFlipper.iml" filepath="$PROJECT_DIR$/WeightedCoinFlipper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weightedcoinflipper.iml" filepath="$PROJECT_DIR$/weightedcoinflipper.iml" />
     </modules>
   </component>
 </project>
