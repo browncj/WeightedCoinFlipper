@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +25,17 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: Implement coin flip logic
+                ImageView coinImg = (ImageView) findViewById(R.id.coin);
+                Random random = new Random();
+                double randValue = random.nextDouble();
+
+                double percentHeads; //Determines weighting, will be relocated later on
+                percentHeads = .5; //Currently hardcoded
+
+                if(randValue <= percentHeads)
+                    coinImg.setImageResource(R.drawable.obverse);
+                else
+                    coinImg.setImageResource(R.drawable.reverse);
             }
         });
     }
