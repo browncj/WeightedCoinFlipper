@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -26,16 +27,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ImageView coinImg = (ImageView) findViewById(R.id.coin);
+                TextView streakCounter = (TextView) findViewById(R.id.streakCounter);
+
                 Random random = new Random();
                 double randValue = random.nextDouble();
 
                 double percentHeads; //Determines weighting, will be relocated later on
                 percentHeads = .5; //Currently hardcoded
 
-                if(randValue <= percentHeads)
+                if(randValue <= percentHeads) {
                     coinImg.setImageResource(R.drawable.obverse);
-                else
+                }
+                else {
                     coinImg.setImageResource(R.drawable.reverse);
+                }
             }
         });
     }
