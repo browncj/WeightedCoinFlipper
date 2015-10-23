@@ -1,0 +1,1 @@
+This is an app designed to allow people to flip a coin. The weighting of each side of the coin can be decided.
