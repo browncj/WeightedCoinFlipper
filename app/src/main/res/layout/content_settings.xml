@@ -10,4 +10,50 @@
     tools:showIn="@layout/activity_settings"
     tools:context="org.bitbucket.guruchris.weightedcoinflipper.SettingsActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Set Weighting"
+        android:id="@+id/settingsLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/decEnter"
+        android:layout_marginTop="95dp"
+        android:hint="Enter number"
+        android:layout_below="@+id/settingsLabel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Enter a number between 0 and 100 to correspond to ther percentage of heads."
+        android:id="@+id/textView"
+        android:layout_below="@+id/decEnter"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="getDec" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Reset streak)"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:onClick="resetStreak" />
 </RelativeLayout>

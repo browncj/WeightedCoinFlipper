@@ -17,6 +17,13 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    protected void onResume(){
+        super.onResume();
+        final TextView streakCounter = (TextView) findViewById(R.id.streakCounter);
+        streakCounter.setText("");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
