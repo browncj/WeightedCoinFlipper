@@ -31,9 +31,4 @@ public class SettingsActivity extends AppCompatActivity {
         state.setWeighting((newWeighting / 100));
     }
 
-    public void resetStreak(View view){
-        GlobalState state = ((GlobalState) getApplicationContext());
-        state.setStreak(0);
-    }
-
 }
