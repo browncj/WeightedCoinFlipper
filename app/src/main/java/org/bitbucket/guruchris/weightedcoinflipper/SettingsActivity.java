@@ -21,14 +21,23 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void getDec(View view){
         EditText editText = (EditText) findViewById(R.id.decEnter);
-        double newWeighting = Double.parseDouble(editText.getText().toString());
+        String input = editText.getText().toString();
+        if(input.equals("")) {
+            Toast.makeText(this, "Please enter a weighting", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        double newWeighting = Double.parseDouble(input);
+
         if(newWeighting < -.0000001 || newWeighting > 100.0000001){
-            Toast toast = Toast.makeText(this, "Please enter a number between 0 and 100", Toast.LENGTH_LONG);
+            Toast.makeText(this, "Please enter a number between 0 and 100", Toast.LENGTH_LONG).show();
             editText.setText("");
             return;
         }
         GlobalState state = ((GlobalState) getApplicationContext());
         state.setWeighting((newWeighting / 100));
+        Toast.makeText(this, "Weighting modified", Toast.LENGTH_LONG).show();
+        editText.setText("");
     }
 
 }
